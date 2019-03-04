@@ -1,0 +1,27 @@
+version: '3'
+services:
+  app:
+    container_name: v1
+    restart: always
+    build: .
+    ports:
+      - '4000:3000'
+    networks:
+      - YelpCamp
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-datadb:/data/db
+    networks:
+      - YelpCamp
+
+volumes:
+  mongo-datadb:
+
+networks:
+  YelpCamp:
