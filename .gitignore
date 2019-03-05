@@ -5,3 +5,4 @@ v4/node_modules
 v5/node_modules
 package-lock.json
 .dockerignore
+Authentication/AuthDemo/node_modules
