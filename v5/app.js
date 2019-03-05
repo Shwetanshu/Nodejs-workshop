@@ -7,11 +7,12 @@ var Comment = require('./models/comment');
 var seedDB		= require('./seeds');
 const PORT = 3000;
 
-mongoose.connect('mongodb://mongo:27017/yelp_camp', { useNewUrlParser: true });
+//mongoose.connect('mongodb://mongo:27017/yelp_camp', { useNewUrlParser: true });
 
-// mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/yelp_camp');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 seedDB();
 
 app.get('/', function (req, res) {
