@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "script": "npm start"
+    "start": "node app.js"
   },
   "author": "Shakti",
   "license": "ISC",
