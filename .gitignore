@@ -6,3 +6,4 @@ v5/node_modules
 package-lock.json
 .dockerignore
 Authentication/AuthDemo/node_modules
+v6/node_modules
