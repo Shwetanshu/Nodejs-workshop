@@ -4,10 +4,11 @@ var	bodyParser = require('body-parser');
 var	mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
+var methodOverride = require('method-override');
 var Campground = require('./models/campground');
 var Comment = require('./models/comment');
 var User = require('./models/user');
-var seedDB		= require('./seeds');
+// var seedDB		= require('./seeds');
 
 //requiring ROUTES
 var commentRoutes = require('./routes/comments');
@@ -20,8 +21,8 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-
-seedDB(); //seed the database
+app.use(methodOverride('_method'));
+// seedDB();
 
 //PASSPORT Configuration
 app.use(require('express-session')({
